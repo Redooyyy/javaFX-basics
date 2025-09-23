@@ -3,6 +3,8 @@ package practice;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
@@ -42,6 +44,7 @@ public class Scene_and_Drawing extends Application{
          text.setFill(Color.BLACK);
         
          
+         
          //Lines (it tooks start and end position to appear)
          Line line = new Line();
          //start position(X,Y)
@@ -76,6 +79,7 @@ public class Scene_and_Drawing extends Application{
          rectangle.setStroke(Color.BLACK);
          
          
+         
          //Triangles
          Polygon triangle = new Polygon();
          //cordinates
@@ -100,12 +104,23 @@ public class Scene_and_Drawing extends Application{
          
          
          
+         /**commented out because lazy to download a pic and add to the project -_-
+         Add image to the scene
+         Image image = new Image("file path");
+         ImageView imageView = new ImageView(image);
+         set positions
+         imageView.setX(100);
+         imageView.setY(400);
+         **/
+         
+         
          //without adding as a children of root, nothing will appear on screen
          root.getChildren().add(text);
          root.getChildren().add(line);
          root.getChildren().add(rectangle);
          root.getChildren().add(triangle);
          root.getChildren().add(circle);
+       //root.getChildren().add.(imageView);
          
          stage.setScene(scene);
          stage.show();

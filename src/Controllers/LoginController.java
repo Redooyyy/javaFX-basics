@@ -19,12 +19,17 @@ import javafx.stage.Stage;
  * @author Reo
  */
 public class LoginController {
-   
+    @FXML //must
+    TextField usrname;
     private Stage stage;
     private Scene scene;
     private Parent root;
     public void onAction(ActionEvent e) throws IOException{
-         root = FXMLLoader.load(getClass().getResource("/Controllers/home.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Controllers/home.fxml"));
+        root = loader.load();
+        homeController homecontrol = loader.getController(); //important (must remember)
+        String name = usrname.getText();
+        homecontrol.passName(name);
         //type casting (event source -> node ->Stage).getScene.getWindow;
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         scene = new Scene(root);
